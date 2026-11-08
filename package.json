@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "build": "node scripts/build-worker.mjs",
-    "check": "node --check web/app.js && node --check web/experience.js && node --check worker/index.js && node scripts/check-worker.mjs && node --check web/roundtable.js && node scripts/check-roundtable.mjs",
+    "check": "node --check web/app.js && node --check web/experience.js && node --check web/experts.js && node --check worker/index.js && node scripts/check-worker.mjs && node --check web/roundtable.js && node scripts/check-roundtable.mjs",
     "dev": "node scripts/preview-worker.mjs"
   }
 }

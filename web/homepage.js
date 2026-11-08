@@ -10,7 +10,7 @@ landing=function(){
    </div>
    <figure class="hero-owner-collage"><img src="/anthrobiz-local-business-owners.jpg" alt="Six local business owners, including a café owner, HVAC professional, hairstylist, chef, florist and office-based owner"/><figcaption><small>FOR THE PEOPLE BEHIND LOCAL BUSINESS</small><strong>You know your craft.<br/>We’ll help with the rest.</strong></figcaption></figure>
   </section>
-  <section class="discovery-strip compact-discovery"><p><span class="eyebrow">AI TOOL DIRECTORY</span><strong>${catalog.length} tools for everyday business work.</strong></p><div>${['canva','chatgpt','square','hubspot','notion','zapier'].map(id=>{const t=catalog.find(x=>x.id===id);return `<button data-action="tool" data-value="${id}" aria-label="View ${esc(t.name)}"><img src="/${t.logo}" alt="${esc(t.name)}"/></button>`}).join('')}</div><a href="/discover">Search the directory ${icon('arrow')}</a></section>
+  <section class="discovery-strip compact-discovery"><p><span class="eyebrow">AI TOOL DIRECTORY</span><strong>120+ tools for everyday business work.</strong></p><div>${['canva','chatgpt','square','hubspot','notion','zapier'].map(id=>{const t=catalog.find(x=>x.id===id);return `<button data-action="tool" data-value="${id}" aria-label="View ${esc(t.name)}"><img src="/${t.logo}" alt="${esc(t.name)}"/></button>`}).join('')}</div><a href="/discover">Search the directory ${icon('arrow')}</a></section>
   <section class="simple-journey" id="how-it-works">
    <div class="section-intro simple-intro"><span class="eyebrow">HOW ANTHROBIZ WORKS</span><h2>One problem.<br/>One clear path.</h2><p>Start in plain English. Keep control of every decision.</p></div>
    <div class="journey-steps compact-steps">

@@ -1,4 +1,5 @@
-// Sites supplies verified identity headers. Never take a user ID from request JSON.
+// Sites identity remains available for existing signed-in workspaces. Public visitors
+// can use a browser-local workspace without sending profile data to this API.
 export const blankWorkspace=()=>({profile:null,saved:[],reviews:[],trial:null,measurement:null,contributions:[]});
 const json=(value,status=200)=>new Response(JSON.stringify(value),{status,headers:{'Content-Type':'application/json; charset=utf-8','Cache-Control':'no-store','X-Content-Type-Options':'nosniff'}});
 const text=(v,max=400)=>typeof v==='string'?v.trim().slice(0,max):'';
@@ -34,7 +35,6 @@ export async function handle(request,env,assets){
   }catch{return json({error:'Your workspace could not be saved or loaded. Please try again.'},503);}
  }
  if(path.startsWith('/api/'))return json({error:'Not found'},404);
- if(['/dashboard','/onboarding'].includes(path)&&!userId)return Response.redirect(u.origin+'/signin-with-chatgpt?return_to='+encodeURIComponent(path),302);
  if(!['GET','HEAD'].includes(request.method))return new Response('Method not allowed',{status:405});
  let assetPath=path==='/'||['/discover','/dashboard','/onboarding','/proof-lab','/stories','/experts','/developers'].includes(path)?'/index.html':path;
  const asset=assets[assetPath];if(!asset)return new Response('Not found',{status:404});

@@ -7,11 +7,14 @@ A public marketing homepage, open directory of 120+ tools, anonymous issue match
 - `/discover`: public search, task-based general suggestions, alternatives and possible tool combinations.
 - `/proof-lab`: fictional salon workflow demo; not a commercial product benchmark.
 - `/experts`: browse illustrative implementation-specialist profiles, create a private project brief, or apply to be listed.
-- `/onboarding`: signed-in five-step profile setup and confirmation.
-- `/dashboard`: signed-in profile, next steps, saved tools and trial progress.
+- `/onboarding`: public five-step profile setup and confirmation.
+- `/dashboard`: browser-local profile, next steps, saved tools and trial progress.
 
-## Authentication and storage
-Sites owns ChatGPT sign-in and supplies verified request identity headers. Public pages require no account. Protected routes redirect to the platform sign-in route. Every workspace API operation requires identity; D1 queries are scoped by that identity, never an ID supplied by the browser. Cross-origin writes are rejected and submitted data is bounded and normalized. D1 schema is in drizzle/0000_workspaces.sql.
+## Public workspace and storage
+Public visitors can create a browser-local AnthroBiz workspace without a ChatGPT account or password. Profiles, saved tools, KPI updates and trial notes stay in that browser's local storage and do not follow the visitor to another device. Existing Sites-authenticated workspaces remain supported: their API operations require verified platform identity, and D1 queries are scoped by that identity, never an ID supplied by the browser. Cross-origin writes are rejected and submitted data is bounded and normalized. D1 schema is in drizzle/0000_workspaces.sql.
+
+## GitHub Pages
+The repository includes a Pages workflow in `.github/workflows/pages.yml`. After pushing to `main`, enable **Settings → Pages → Source: GitHub Actions**. The workflow validates the prototype, builds `pages-dist`, adjusts links for either a user site or project site, and deploys it. GitHub Pages runs the public browser-local workspace; it does not run the Worker or D1 API.
 
 Revenue is an optional range with a Prefer not to say choice. Anonymous issue matching runs locally, without an external AI request. A submitted issue is carried in tab sessionStorage only when the visitor chooses signup, then reviewed before profile creation. Previously local-only prototype profiles are not silently imported or uploaded.
 
@@ -25,7 +28,7 @@ Revenue is an optional range with a Prefer not to say choice. Anonymous issue ma
 Run npm run build, then publish through Sites using the existing project ID. Runtime binding is DB. A new deployment applies the versioned schema migration.
 
 ## Local development and validation
-npm run dev serves port 4173 using an in-memory SQLite fixture. Its local sign-in creates a fictional developer account. This preview-only sign-in code is not bundled or deployed. npm run check validates JavaScript and tests anonymous routes, unauthorized access, cross-user isolation, same-origin writes, field validation, persistence and protected redirects.
+npm run dev serves port 4173 using an in-memory SQLite fixture. The preview supports the same browser-local public workspace as production. npm run check validates JavaScript and tests anonymous routes, unauthorized access, cross-user isolation, same-origin writes, field validation, persistence and public workspace routes.
 
 Browser checks cover anonymous issue matching, suggested combinations, profile question flow, issue carryover, confirmation, saving, reload persistence and logout. Actual hosted identity is supplied by Sites; local tests use the explicit fixture.
 

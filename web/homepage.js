@@ -1,4 +1,4 @@
-// A concise, human-first public homepage. The deeper product remains in the signed-in workspace.
+// A concise, human-first public homepage. The deeper product remains in the visitor’s browser workspace.
 landing=function(){
  return `${publicNav()}<main id="content" class="public-main">
   <section class="landing-hero human-hero">
@@ -6,7 +6,7 @@ landing=function(){
     <span class="eyebrow">FOR PEOPLE WHO RUN A SMALL BUSINESS</span>
     <h1>Less busywork.<br/><em>More business.</em></h1>
     <p>Discover how AI can work for your business. AnthroBiz helps you understand your needs, find and test the right AI tools, and manage everything through a personalized dashboard.</p>
-    <div class="hero-actions">${primaryLink('Find a solution','/discover')}<a class="outline signup-link" href="${signIn}" target="_top">Create my free profile ${icon('plus')}</a></div>
+    <div class="hero-actions">${primaryLink('Find a solution','/discover')}<a class="outline signup-link" href="${signIn}">Create my free profile ${icon('plus')}</a></div>
    </div>
    <figure class="hero-owner-collage"><img src="/anthrobiz-local-business-owners.jpg" alt="Six local business owners, including a café owner, HVAC professional, hairstylist, chef, florist and office-based owner"/><figcaption><small>FOR THE PEOPLE BEHIND LOCAL BUSINESS</small><strong>You know your craft.<br/>We’ll help with the rest.</strong></figcaption></figure>
   </section>
@@ -24,7 +24,7 @@ landing=function(){
    <article class="core-card roundtable-card simple-system-card"><span class="feature-icon">${icon('chat')}</span><span class="eyebrow">UNDERSTAND BEFORE RECOMMENDING</span><h2>Your AI manager Roundtable.</h2><p>Your business context, existing software and issue are considered together. The Roundtable identifies likely causes and defines what a useful solution needs to accomplish.</p><div class="simple-system-flow" aria-label="Your business information enters the AI Roundtable, which produces clear solution requirements."><div><small>START</small><b>Your business</b><span>Profile + tools + issue</span></div><em aria-hidden="true">→</em><div><small>REVIEW</small><b>AI Roundtable</b><span>Several perspectives</span></div><em aria-hidden="true">→</em><div><small>OUTPUT</small><b>Clear requirements</b><span>What the solution must do</span></div></div><button class="outline" data-action="roundtable-info">See an example ${icon('arrow')}</button></article>
    <article class="core-card sandbox-card learning-card"><span class="feature-icon">${icon('chart')}</span><span class="eyebrow">EVIDENCE-DRIVEN RECOMMENDATIONS</span><h2>Recommendations that improve with evidence.</h2><p>AnthroBiz compares suitable tools using your needs, budget, current software and available evidence. Results and feedback help make the next recommendation more useful.</p><div class="evidence-loop" aria-label="Recommend, use, measure and improve in a continuous evidence loop."><div class="loop-stages"><span><i>01</i><b>Recommend</b></span><em>→</em><span><i>02</i><b>Use</b></span><em>→</em><span><i>03</i><b>Measure</b></span><em>→</em><span><i>04</i><b>Improve</b></span></div><div class="loop-signal"><small>EVIDENCE THAT STRENGTHENS THE NEXT RECOMMENDATION</small><p>Customer feedback · KPI results · actual cost · structured testing when available</p></div></div>${primaryLink('Explore your options','/discover')}</article>
   </section>
-  <section class="final-cta simpler-cta"><div><span class="eyebrow">YOUR BUSINESS. YOUR NEXT STEP.</span><h2>Start with what you’d like to make easier.</h2></div><div>${primaryLink('Explore your options','/discover')}<a class="outline signup-link" href="${signIn}" target="_top">Create a free profile</a></div></section>
+  <section class="final-cta simpler-cta"><div><span class="eyebrow">YOUR BUSINESS. YOUR NEXT STEP.</span><h2>Start with what you’d like to make easier.</h2></div><div>${primaryLink('Explore your options','/discover')}<a class="outline signup-link" href="${signIn}">Create a free profile</a></div></section>
  </main>${publicFooter()}`;
 };
 if(page==='landing')render();

@@ -12,7 +12,7 @@ landing=function(){
   </section>
   <section class="discovery-strip compact-discovery"><p><span class="eyebrow">AI TOOL DIRECTORY</span><strong>120+ tools for everyday business work.</strong></p><div>${['canva','chatgpt','square','hubspot','notion','zapier'].map(id=>{const t=catalog.find(x=>x.id===id);return `<button data-action="tool" data-value="${id}" aria-label="View ${esc(t.name)}"><img src="/${t.logo}" alt="${esc(t.name)}"/></button>`}).join('')}</div><a href="/discover">Search the directory ${icon('arrow')}</a></section>
   <section class="simple-journey" id="how-it-works">
-   <div class="section-intro simple-intro"><span class="eyebrow">HOW ANTHROBIZ WORKS</span><h2>One problem.<br/>One clear path.</h2><p>Start in plain English. Keep control of every decision.</p></div>
+   <div class="section-intro simple-intro"><span class="eyebrow">HOW ANTHROBIZ WORKS</span><h2>A simpler way to find what works.</h2><p>Start in plain English. Keep control of every decision.</p></div>
    <div class="journey-steps compact-steps">
     <article><span>01</span><h3>Tell us about your business</h3><p>Share a few business details, the tools you already use and what you want to improve.</p></article>
     <article><span>02</span><h3>Meet your AI Roundtable</h3><p>AI managers examine the issue from several business perspectives and define what a useful solution must do.</p></article>

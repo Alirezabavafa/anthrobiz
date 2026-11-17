@@ -8,7 +8,7 @@ landing=function(){
     <p>Discover how AI can work for your business. AnthroBiz helps you understand your needs, find and test the right AI tools, and manage everything through a personalized dashboard.</p>
     <div class="hero-actions">${primaryLink('Find a solution','/discover')}<a class="outline signup-link" href="${signIn}">Create my free profile ${icon('plus')}</a></div>
    </div>
-   <figure class="hero-owner-collage"><img src="/anthrobiz-local-business-owners.jpg" alt="Six local business owners, including a café owner, HVAC professional, hairstylist, chef, florist and office-based owner"/><figcaption><small>FOR THE PEOPLE BEHIND LOCAL BUSINESS</small><strong>You know your craft.<br/>We’ll help with the rest.</strong></figcaption></figure>
+   <figure class="hero-owner-collage"><img src="/anthrobiz-local-business-owners.jpg" alt="Six local business owners, including a café owner, HVAC professional, hairstylist, chef, florist and office-based owner"/><figcaption><strong>You know your craft.<br/>We’ll help with the rest.</strong></figcaption></figure>
   </section>
   <section class="discovery-strip compact-discovery"><p><span class="eyebrow">AI TOOL DIRECTORY</span><strong>120+ tools for everyday business work.</strong></p><div>${['canva','chatgpt','square','hubspot','notion','zapier'].map(id=>{const t=catalog.find(x=>x.id===id);return `<button data-action="tool" data-value="${id}" aria-label="View ${esc(t.name)}"><img src="/${t.logo}" alt="${esc(t.name)}"/></button>`}).join('')}</div><a href="/discover">Search the directory ${icon('arrow')}</a></section>
   <section class="simple-journey" id="how-it-works">
